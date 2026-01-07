@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.svelte";
+import MenuSection from "../components/MenuSection.svelte";
+import Footer from "../components/Footer.svelte";
+
+const title = "Menu | Handcrafted Italian Dishes at Eat at Franco";
+const description =
+  "Explore the Eat at Franco menu featuring classic Italian dishes, fresh pasta, signature sauces, and carefully selected ingredients made with authentic recipes.";
+const canonical = "https://eatatfranco.com/dinner-menu";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <Navbar client:load />
+
+  <!-- Page Header -->
+  <section class="pt-32 pb-8 px-4 bg-darker text-center">
+    <h1 class="font-serif text-4xl md:text-6xl text-gold mb-4">Dinner Menu</h1>
+    <p class="font-sans text-lg text-gray-400 max-w-2xl mx-auto">
+      Classic French techniques, locally sourced ingredients
+    </p>
+    <p class="font-sans text-sm text-gray-500 mt-4">
+      Monday – Saturday, 5pm – Close
+    </p>
+  </section>
+
+  <!-- Full Menu -->
+  <MenuSection client:visible />
+
+  <!-- CTA -->
+  <section class="py-20 px-4 bg-darker text-center">
+    <h2 class="font-serif text-3xl text-white mb-6">Ready to Dine?</h2>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/contact-us" class="btn-primary">Make a Reservation</a>
+      <a href="tel:3144362500" class="btn-outline">Call 314.436.2500</a>
+    </div>
+  </section>
+
+  <Footer client:load />
+</BaseLayout>

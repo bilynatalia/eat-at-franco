@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base body styles */
+body {
+  background: linear-gradient(180deg, #2c1e18 0%, #120b08 100%);
+  background-attachment: fixed;
+  color: #d6ccc2;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom component classes */
+.reveal-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal-element.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+
+/* Menu tab underline animation */
+.menu-tab {
+  position: relative;
+}
+
+.menu-tab::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #c5a059;
+  transition: width 0.3s ease;
+}
+
+.menu-tab.active::after {
+  width: 100%;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Button base styles */
+.btn-primary {
+  background-color: #c5a059;
+  color: #120b08;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 1rem 2rem;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn-outline {
+  border: 2px solid #c5a059;
+  color: #c5a059;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 1rem 2rem;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: #c5a059;
+  color: #120b08;
+  transform: translateY(-2px);
+}
+
+/* Form input styles */
+.form-input {
+  width: 100%;
+  background-color: rgba(44, 30, 24, 0.5);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  border-radius: 2px;
+  padding: 0.75rem 1rem;
+  color: #d6ccc2;
+  transition: border-color 0.3s ease;
+}
+
+.form-input::placeholder {
+  color: #5c4d46;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #c5a059;
+  box-shadow: 0 0 0 1px rgba(197, 160, 89, 0.5);
+}
+
+.form-label {
+  display: block;
+  font-size: 0.75rem;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #c5a059;
+  margin-bottom: 0.5rem;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-element {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Loading screen animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+.loader-pulse {
+  animation: pulse 2s infinite ease-in-out;
+}

@@ -1,0 +1,13 @@
+{
+  "liveServer.settings.port": 5501,
+  "css.validate": false,
+  "scss.validate": false,
+  "less.validate": false,
+  "tailwindCSS.includeLanguages": {
+    "astro": "html",
+    "svelte": "html"
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  }
+}

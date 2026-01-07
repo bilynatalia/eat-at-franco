@@ -1,0 +1,123 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.svelte";
+import ContactForm from "../components/ContactForm.svelte";
+import Footer from "../components/Footer.svelte";
+
+const title = "Private Events | Host Your Event at Eat at Franco";
+const description =
+  "Host your private event at Eat at Franco. We offer beautiful spaces for lunches, brunches, dinners, and happy hours for groups from 6 to 200 people.";
+const canonical = "https://eatatfranco.com/private-events";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <Navbar client:load />
+
+  <!-- Hero Section -->
+  <section
+    class="pt-32 pb-20 px-4 bg-wine-pattern bg-cover bg-center relative min-h-[60vh] flex items-center"
+  >
+    <div class="absolute inset-0 bg-darker/85"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto text-center">
+      <h1 class="font-serif text-4xl md:text-6xl text-gold mb-6">
+        Lunches, Brunches, Dinners, and Happy Hours
+      </h1>
+      <p
+        class="font-sans text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto"
+      >
+        Franco has beautiful spaces to host your private events. We offer
+        Lunches, Brunches, and Happy Hours for groups from 6 - 200 people.
+      </p>
+    </div>
+  </section>
+
+  <!-- Info & Contact Section -->
+  <section class="py-20 px-4 md:px-16 bg-dark">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16">
+      <!-- Left: Event Info -->
+      <div>
+        <h2 class="font-serif text-3xl text-gold mb-8">
+          Host Your Private Event
+        </h2>
+
+        <p class="font-sans text-gray-300 leading-relaxed mb-8">
+          Whether you're planning an intimate dinner for 6 or a grand
+          celebration for 200, Franco offers the perfect setting for your
+          special occasion. Our team will work with you to create a memorable
+          experience tailored to your needs.
+        </p>
+
+        <!-- Event Types -->
+        <div class="grid sm:grid-cols-2 gap-6 mb-12">
+          <div class="border border-gold/20 rounded-sm p-6 bg-darker/30">
+            <i class="fa-solid fa-sun text-gold text-2xl mb-4"></i>
+            <h3 class="font-serif text-xl text-white mb-2">Brunches</h3>
+            <p class="text-gray-400 text-sm">
+              Perfect for weekend celebrations and social gatherings
+            </p>
+          </div>
+          <div class="border border-gold/20 rounded-sm p-6 bg-darker/30">
+            <i class="fa-solid fa-utensils text-gold text-2xl mb-4"></i>
+            <h3 class="font-serif text-xl text-white mb-2">Lunches</h3>
+            <p class="text-gray-400 text-sm">
+              Corporate events and midday celebrations
+            </p>
+          </div>
+          <div class="border border-gold/20 rounded-sm p-6 bg-darker/30">
+            <i class="fa-solid fa-moon text-gold text-2xl mb-4"></i>
+            <h3 class="font-serif text-xl text-white mb-2">Dinners</h3>
+            <p class="text-gray-400 text-sm">
+              Elegant evening affairs and special occasions
+            </p>
+          </div>
+          <div class="border border-gold/20 rounded-sm p-6 bg-darker/30">
+            <i class="fa-solid fa-champagne-glasses text-gold text-2xl mb-4"
+            ></i>
+            <h3 class="font-serif text-xl text-white mb-2">Happy Hours</h3>
+            <p class="text-gray-400 text-sm">
+              Casual gatherings and networking events
+            </p>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="border border-gold/30 rounded-sm p-8 bg-darker/50">
+          <h3 class="font-serif text-xl text-gold mb-6">Get in Touch</h3>
+          <p class="font-sans text-gray-300 mb-6">
+            Please call or email to learn more about how we can impress you and
+            your guests.
+          </p>
+          <div class="space-y-3">
+            <p class="text-gray-300">
+              <i class="fa-solid fa-phone text-gold mr-3"></i>
+              <a href="tel:3144362500" class="hover:text-gold transition-colors"
+                >314-436-2500</a
+              >
+            </p>
+            <p class="text-gray-300">
+              <i class="fa-solid fa-envelope text-gold mr-3"></i>
+              <a
+                href="mailto:franco@eatatfranco.com"
+                class="hover:text-gold transition-colors"
+                >franco@eatatfranco.com</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Inquiry Form -->
+      <div class="border border-gold/30 rounded-sm p-8 md:p-12 bg-darker/50">
+        <ContactForm
+          client:visible
+          formTitle="Event Inquiry"
+          submitButtonText="Submit Inquiry"
+          showSubject={true}
+        />
+      </div>
+    </div>
+  </section>
+
+  <Footer client:load />
+</BaseLayout>

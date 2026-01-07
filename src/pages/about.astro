@@ -1,0 +1,95 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.svelte";
+import AboutSection from "../components/AboutSection.svelte";
+import Footer from "../components/Footer.svelte";
+
+const title = "About Eat at Franco | Our Story, Passion, and Italian Heritage";
+const description =
+  "Discover the story behind Eat at Franco, our passion for authentic Italian flavors, traditional cooking techniques, and a commitment to quality dining experiences.";
+const canonical = "https://eatatfranco.com/about";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <Navbar client:load />
+
+  <!-- Page Header -->
+  <section class="pt-32 pb-16 px-4 bg-darker text-center">
+    <h1 class="font-serif text-4xl md:text-6xl text-gold mb-4">About Franco</h1>
+    <p class="font-sans text-lg text-gray-400 max-w-2xl mx-auto">
+      Where French tradition meets Saint Louis hospitality
+    </p>
+  </section>
+
+  <!-- Story Section -->
+  <section class="py-20 px-4 md:px-16 bg-dark">
+    <div class="max-w-4xl mx-auto">
+      <div class="mb-16 text-center">
+        <h2 class="font-serif text-3xl md:text-4xl text-white mb-8">
+          Our Story
+        </h2>
+        <p
+          class="font-sans text-base md:text-lg text-gray-300 leading-relaxed mb-6"
+        >
+          Franco is a French restaurant and bar located in the heart of the
+          historic Soulard neighborhood of Saint Louis. Named in honor of the
+          classic French bistro tradition, Franco offers an elegant yet
+          comfortable atmosphere where guests can enjoy exceptional cuisine
+          crafted with passion and precision.
+        </p>
+        <p class="font-sans text-base md:text-lg text-gray-300 leading-relaxed">
+          Our menu celebrates the timeless techniques of French cooking while
+          embracing the bounty of local ingredients. Adjacent to the historic
+          Soulard Farmers Market—the oldest farmers' market west of the
+          Mississippi—we source many of our ingredients fresh from local
+          vendors.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 mb-16">
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6"
+          >
+            <i class="fa-solid fa-utensils text-gold text-2xl"></i>
+          </div>
+          <h3 class="font-serif text-2xl text-gold mb-4">The Cuisine</h3>
+          <p class="text-gray-400">
+            Classic French techniques honored with care, from our handcrafted
+            sauces to our perfectly seared proteins. Every dish tells a story of
+            tradition and craftsmanship.
+          </p>
+        </div>
+        <div class="text-center">
+          <div
+            class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6"
+          >
+            <i class="fa-solid fa-wine-glass text-gold text-2xl"></i>
+          </div>
+          <h3 class="font-serif text-2xl text-gold mb-4">The Bar</h3>
+          <p class="text-gray-400">
+            Our carefully curated wine list features selections from renowned
+            French vineyards and beyond, complemented by classic cocktails and
+            craft beverages.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <AboutSection client:visible />
+
+  <!-- CTA -->
+  <section class="py-20 px-4 bg-darker text-center">
+    <h2 class="font-serif text-3xl md:text-4xl text-white mb-6">
+      Experience Franco
+    </h2>
+    <p class="font-sans text-gray-400 mb-8 max-w-xl mx-auto">
+      Join us for an unforgettable dining experience in the heart of Soulard.
+    </p>
+    <a href="/contact-us" class="btn-primary">Reserve Your Table</a>
+  </section>
+
+  <Footer client:load />
+</BaseLayout>

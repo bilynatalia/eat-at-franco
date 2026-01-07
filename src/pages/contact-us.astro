@@ -1,0 +1,122 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.svelte";
+import ContactForm from "../components/ContactForm.svelte";
+import Footer from "../components/Footer.svelte";
+
+const title = "Contact Eat at Franco | Location, Reservations, and Inquiries";
+const description =
+  "Get in touch with Eat at Franco for reservations, location details, opening hours, and general inquiries. We look forward to welcoming you.";
+const canonical = "https://eatatfranco.com/contact-us";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <Navbar client:load />
+
+  <!-- Page Header -->
+  <section class="pt-32 pb-16 px-4 bg-darker text-center">
+    <h1 class="font-serif text-4xl md:text-6xl text-gold mb-4">
+      Make an Online Reservation
+    </h1>
+    <p class="font-sans text-lg text-gray-400">
+      Or call <a href="tel:3144362500" class="text-gold hover:underline"
+        >314.436.2500</a
+      > for reservations.
+    </p>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-16 px-4 md:px-16 bg-dark">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16">
+      <!-- Left: Location Info -->
+      <div>
+        <h2 class="font-serif text-3xl text-gold mb-8">
+          In the Heart of Soulard
+        </h2>
+        <p class="font-sans text-gray-300 leading-relaxed mb-8">
+          Franco is adjacent to the historic Soulard Farmers Market, the oldest
+          farmers' market west of the Mississippi, and home to many of the
+          local, fresh ingredients found in our cuisine. We are located in the
+          Soulard Market Apartment building at the corner of 8th and Carroll in
+          Soulard.
+        </p>
+
+        <!-- Hours & Address -->
+        <div class="border border-gold/30 rounded-sm p-8 bg-darker/50 mb-8">
+          <div class="mb-6">
+            <h3 class="font-serif text-xl text-gold mb-3">Hours</h3>
+            <p class="font-sans text-gray-300 font-bold">
+              DINNER: MONDAY – SATURDAY, 5PM – CLOSE
+            </p>
+          </div>
+
+          <div class="mb-6">
+            <h3 class="font-serif text-xl text-gold mb-3">Address</h3>
+            <p class="font-sans text-gray-300">1535 SOUTH EIGHTH</p>
+            <p class="font-sans text-gray-300">ST. LOUIS, MISSOURI 63104</p>
+            <p class="font-sans text-gray-300 mt-2">
+              <a href="tel:3144362500" class="text-gold hover:underline"
+                >314.436.2500</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <!-- Directions -->
+        <div>
+          <h3 class="font-serif text-2xl text-gold mb-6">Directions</h3>
+
+          <div class="space-y-6">
+            <div>
+              <h4
+                class="font-sans text-sm uppercase tracking-wider text-gold mb-2"
+              >
+                From I-44 or I-55
+              </h4>
+              <p class="font-sans text-gray-400 text-sm leading-relaxed">
+                Take the 7th Street Exit near downtown and follow signs to
+                Soulard Market/Broadway.
+              </p>
+            </div>
+
+            <div>
+              <h4
+                class="font-sans text-sm uppercase tracking-wider text-gold mb-2"
+              >
+                From I-64/40 West
+              </h4>
+              <p class="font-sans text-gray-400 text-sm leading-relaxed">
+                Take the Last Missouri Exit, turn left on Cerre, then right onto
+                Broadway.
+              </p>
+            </div>
+
+            <div>
+              <h4
+                class="font-sans text-sm uppercase tracking-wider text-gold mb-2"
+              >
+                From Downtown/Broadway
+              </h4>
+              <p class="font-sans text-gray-400 text-sm leading-relaxed">
+                Head south as Broadway turns into 7th Street. Turn onto Carroll
+                St. or Marion St. just north of Soulard Market. Franco is on 8th
+                St. between Marion and Carroll.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Contact Form -->
+      <div class="border border-gold/30 rounded-sm p-8 md:p-12 bg-darker/50">
+        <ContactForm
+          client:visible
+          formTitle="Reserve Your Table"
+          submitButtonText="Request Reservation"
+        />
+      </div>
+    </div>
+  </section>
+
+  <Footer client:load />
+</BaseLayout>

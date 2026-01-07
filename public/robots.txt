@@ -1,0 +1,14 @@
+# robots.txt for eatatfranco.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://eatatfranco.com/sitemap-index.xml
+
+# Disallow admin and private paths
+Disallow: /api/
+Disallow: /_astro/
+
+# Crawl delay (optional, for politeness)
+Crawl-delay: 1

@@ -1,0 +1,85 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.svelte";
+import Footer from "../components/Footer.svelte";
+
+const title = "Subscribe | Stay Updated with Eat at Franco";
+const description =
+  "Subscribe to the Eat at Franco newsletter for updates on seasonal menus, special events, and exclusive offers.";
+const canonical = "https://eatatfranco.com/subscribe-now";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <Navbar client:load />
+
+  <!-- Subscribe Section -->
+  <section
+    class="min-h-screen flex items-center justify-center px-4 py-32 bg-menu-pattern bg-cover bg-fixed relative"
+  >
+    <div class="absolute inset-0 bg-darker/90"></div>
+
+    <div class="relative z-10 max-w-xl mx-auto text-center">
+      <div
+        class="border border-gold/40 p-10 md:p-16 bg-darker/80 backdrop-blur-md rounded-sm shadow-2xl"
+      >
+        <div class="mb-8">
+          <i class="fa-solid fa-envelope text-gold text-4xl mb-6"></i>
+          <h1 class="font-serif text-4xl md:text-5xl text-gold mb-4">
+            Stay Connected
+          </h1>
+          <p class="font-sans text-gray-300 leading-relaxed">
+            Subscribe to receive updates on seasonal menus, special events, and
+            exclusive offers from Franco.
+          </p>
+        </div>
+
+        <form id="subscribe-form" class="space-y-6">
+          <div>
+            <input
+              type="text"
+              name="name"
+              required
+              placeholder="Your Name"
+              class="form-input text-center"
+            />
+          </div>
+
+          <div>
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="your@email.com"
+              class="form-input text-center"
+            />
+          </div>
+
+          <button type="submit" class="btn-primary w-full">
+            Subscribe Now
+          </button>
+        </form>
+
+        <p class="mt-8 text-xs text-gray-500">
+          We respect your privacy. Unsubscribe at any time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Footer client:load />
+</BaseLayout>
+
+<script>
+  document
+    .getElementById("subscribe-form")
+    ?.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const form = e.target as HTMLFormElement;
+      const button = form.querySelector("button");
+      if (button) {
+        button.textContent = "Thank You!";
+        button.disabled = true;
+        form.reset();
+      }
+    });
+</script>

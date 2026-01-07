@@ -1,0 +1,72 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.svelte";
+import Hero from "../components/Hero.svelte";
+import MenuSection from "../components/MenuSection.svelte";
+import AboutSection from "../components/AboutSection.svelte";
+import Footer from "../components/Footer.svelte";
+
+const title = "Eat at Franco | Authentic Italian Dining & Signature Menu";
+const description =
+  "Eat at Franco offers authentic Italian cuisine with handcrafted recipes, fresh ingredients, and a warm dining atmosphere. Explore our signature dishes and seasonal menu.";
+const canonical = "https://eatatfranco.com/";
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <Navbar client:load />
+  <Hero client:load />
+
+  <div id="content">
+    <!-- Menu Preview -->
+    <MenuSection client:visible />
+
+    <!-- About Section -->
+    <AboutSection client:visible />
+
+    <!-- CTA Section -->
+    <section
+      class="py-24 px-4 bg-wine-pattern bg-cover bg-center text-center relative"
+    >
+      <div class="absolute inset-0 bg-darker/80"></div>
+
+      <div
+        class="max-w-4xl mx-auto border border-gold/40 p-10 md:p-20 bg-darker/80 backdrop-blur-md shadow-2xl relative z-10"
+      >
+        <h2 class="font-serif text-4xl md:text-6xl text-white mb-8">Join Us</h2>
+
+        <div class="grid md:grid-cols-2 gap-12 mb-12">
+          <div>
+            <h3 class="font-serif text-2xl text-gold mb-4">Hours</h3>
+            <p class="font-sans text-sm md:text-base text-gray-300 mb-2">
+              Dinner: Mon - Sat, 5pm - Close
+            </p>
+            <p class="font-sans text-sm md:text-base text-gray-300">
+              Happy Hour: Tue - Fri, 5pm - 7pm
+            </p>
+          </div>
+          <div>
+            <h3 class="font-serif text-2xl text-gold mb-4">Contact</h3>
+            <p class="font-sans text-sm md:text-base text-gray-300 mb-2">
+              1535 South Eighth St.
+            </p>
+            <p class="font-sans text-sm md:text-base text-gray-300">
+              St. Louis, MO 63104
+            </p>
+            <p class="font-sans text-sm md:text-base text-gray-300">
+              314.436.2500
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact-us" class="btn-primary">Make a Reservation</a>
+          <a href="/subscribe-now" class="btn-outline"
+            >Subscribe to Newsletter</a
+          >
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <Footer client:load />
+</BaseLayout>
