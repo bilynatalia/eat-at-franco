@@ -2,13 +2,11 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Navbar from "../components/Navbar.svelte";
 import Hero from "../components/Hero.svelte";
-import MenuSection from "../components/MenuSection.svelte";
-import AboutSection from "../components/AboutSection.svelte";
 import Footer from "../components/Footer.svelte";
 
-const title = "Eat at Franco | Authentic Italian Dining & Signature Menu";
+const title = "Eat at Franco | Authentic French Dining & Signature Menu";
 const description =
-  "Eat at Franco offers authentic Italian cuisine with handcrafted recipes, fresh ingredients, and a warm dining atmosphere. Explore our signature dishes and seasonal menu.";
+  "Eat at Franco offers authentic French cuisine with handcrafted recipes, fresh ingredients, and a warm dining atmosphere. Explore our signature dishes and seasonal menu.";
 const canonical = "https://eatatfranco.com/";
 ---
 
@@ -17,53 +15,328 @@ const canonical = "https://eatatfranco.com/";
   <Hero client:load />
 
   <div id="content">
-    <!-- Menu Preview -->
-    <MenuSection client:visible />
+    <!-- Welcome Section -->
+    <section class="py-24 px-4 md:px-16 bg-darker relative overflow-hidden">
+      <!-- Decorative Elements -->
+      <div
+        class="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"
+      >
+      </div>
 
-    <!-- About Section -->
-    <AboutSection client:visible />
+      <div class="max-w-6xl mx-auto relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <!-- Text Content -->
+          <div>
+            <span
+              class="font-sans text-gold text-sm uppercase tracking-[0.3em] mb-4 block"
+              >Welcome to Franco</span
+            >
+            <h2
+              class="font-serif text-4xl md:text-5xl text-white mb-8 leading-tight"
+            >
+              Where French Tradition Meets Saint Louis Hospitality
+            </h2>
+            <p class="font-sans text-gray-300 leading-relaxed mb-6">
+              Nestled in the heart of the historic Soulard neighborhood, Franco
+              is a French restaurant and bar that celebrates the art of fine
+              dining. Adjacent to the Soulard Farmers Market—the oldest west of
+              the Mississippi—we craft each dish with the freshest local
+              ingredients.
+            </p>
+            <p class="font-sans text-gray-300 leading-relaxed mb-8">
+              Our menu honors classic French techniques while embracing the
+              warmth and spirit of Saint Louis, creating an atmosphere that's
+              both elegant and welcoming.
+            </p>
+            <a href="/about" class="btn-outline inline-block">
+              Discover Our Story
+            </a>
+          </div>
+
+          <!-- Image -->
+          <div class="relative">
+            <img
+              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Elegant French dining experience"
+              class="rounded-sm shadow-2xl w-full h-[500px] object-cover"
+            />
+            <div
+              class="absolute -bottom-6 -left-6 bg-gold p-6 rounded-sm shadow-xl"
+            >
+              <p class="font-serif text-darker text-2xl font-bold">
+                Since 2015
+              </p>
+              <p class="font-sans text-darker/70 text-sm">
+                Serving Saint Louis
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Experience -->
+    <section class="py-24 px-4 md:px-16 bg-dark">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <span
+            class="font-sans text-gold text-sm uppercase tracking-[0.3em] mb-4 block"
+            >The Experience</span
+          >
+          <h2 class="font-serif text-4xl md:text-5xl text-white mb-4">
+            Crafted with Passion
+          </h2>
+          <p class="font-sans text-gray-400 max-w-2xl mx-auto">
+            From our carefully sourced ingredients to our expertly crafted
+            cocktails, every detail is designed to delight.
+          </p>
+        </div>
+
+        <!-- Feature Cards -->
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Card 1: Cuisine -->
+          <div
+            class="group relative overflow-hidden rounded-sm h-96 cursor-pointer"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="French cuisine"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-darker via-darker/50 to-transparent"
+            >
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 p-8">
+              <h3 class="font-serif text-2xl text-white mb-2">
+                French Cuisine
+              </h3>
+              <p
+                class="font-sans text-gray-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                Classic techniques, locally sourced ingredients
+              </p>
+              <a
+                href="/dinner-menu"
+                class="text-gold text-sm uppercase tracking-wider hover:underline"
+              >
+                View Menu →
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: Bar -->
+          <div
+            class="group relative overflow-hidden rounded-sm h-96 cursor-pointer"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Craft cocktails"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-darker via-darker/50 to-transparent"
+            >
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 p-8">
+              <h3 class="font-serif text-2xl text-white mb-2">The Bar</h3>
+              <p
+                class="font-sans text-gray-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                Curated wines & craft cocktails
+              </p>
+              <a
+                href="/dinner-menu"
+                class="text-gold text-sm uppercase tracking-wider hover:underline"
+              >
+                Explore Drinks →
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: Ambiance -->
+          <div
+            class="group relative overflow-hidden rounded-sm h-96 cursor-pointer"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Elegant ambiance"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-darker via-darker/50 to-transparent"
+            >
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 p-8">
+              <h3 class="font-serif text-2xl text-white mb-2">Ambiance</h3>
+              <p
+                class="font-sans text-gray-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              >
+                Elegant yet comfortable atmosphere
+              </p>
+              <a
+                href="/private-events"
+                class="text-gold text-sm uppercase tracking-wider hover:underline"
+              >
+                Private Events →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section
+      class="py-24 px-4 md:px-16 bg-menu-pattern bg-cover bg-fixed relative"
+    >
+      <div class="absolute inset-0 bg-darker/90"></div>
+
+      <div class="max-w-6xl mx-auto relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <!-- Images Grid -->
+          <div class="grid grid-cols-2 gap-4">
+            <img
+              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+              alt="Gourmet dish"
+              class="rounded-sm shadow-lg h-64 w-full object-cover"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1546833998-877b37c2e5c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+              alt="Fine dining"
+              class="rounded-sm shadow-lg h-64 w-full object-cover mt-8"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1515669097368-22e68427d265?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+              alt="Wine selection"
+              class="rounded-sm shadow-lg h-64 w-full object-cover -mt-8"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+              alt="Dessert"
+              class="rounded-sm shadow-lg h-64 w-full object-cover"
+            />
+          </div>
+
+          <!-- Text Content -->
+          <div>
+            <span
+              class="font-sans text-gold text-sm uppercase tracking-[0.3em] mb-4 block"
+              >Why Franco</span
+            >
+            <h2
+              class="font-serif text-4xl md:text-5xl text-white mb-8 leading-tight"
+            >
+              An Unforgettable Dining Experience
+            </h2>
+
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <div
+                  class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-solid fa-leaf text-gold"></i>
+                </div>
+                <div>
+                  <h3 class="font-serif text-xl text-white mb-2">
+                    Farm Fresh Ingredients
+                  </h3>
+                  <p class="text-gray-400 text-sm">
+                    Sourced daily from Soulard Farmers Market and local
+                    purveyors
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div
+                  class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-solid fa-utensils text-gold"></i>
+                </div>
+                <div>
+                  <h3 class="font-serif text-xl text-white mb-2">
+                    Classic French Techniques
+                  </h3>
+                  <p class="text-gray-400 text-sm">
+                    Time-honored methods perfected by our culinary team
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div
+                  class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0"
+                >
+                  <i class="fa-solid fa-wine-glass text-gold"></i>
+                </div>
+                <div>
+                  <h3 class="font-serif text-xl text-white mb-2">
+                    Curated Wine Selection
+                  </h3>
+                  <p class="text-gray-400 text-sm">
+                    Handpicked wines from France and around the world
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- CTA Section -->
     <section
       class="py-24 px-4 bg-wine-pattern bg-cover bg-center text-center relative"
     >
-      <div class="absolute inset-0 bg-darker/80"></div>
+      <div class="absolute inset-0 bg-darker/85"></div>
 
-      <div
-        class="max-w-4xl mx-auto border border-gold/40 p-10 md:p-20 bg-darker/80 backdrop-blur-md shadow-2xl relative z-10"
-      >
-        <h2 class="font-serif text-4xl md:text-6xl text-white mb-8">Join Us</h2>
+      <div class="max-w-3xl mx-auto relative z-10">
+        <h2 class="font-serif text-4xl md:text-5xl text-white mb-6">
+          Ready to Experience Franco?
+        </h2>
+        <p class="font-sans text-gray-300 mb-10 text-lg">
+          Join us for dinner Monday through Saturday. Reservations recommended.
+        </p>
 
-        <div class="grid md:grid-cols-2 gap-12 mb-12">
-          <div>
-            <h3 class="font-serif text-2xl text-gold mb-4">Hours</h3>
-            <p class="font-sans text-sm md:text-base text-gray-300 mb-2">
-              Dinner: Mon - Sat, 5pm - Close
-            </p>
-            <p class="font-sans text-sm md:text-base text-gray-300">
-              Happy Hour: Tue - Fri, 5pm - 7pm
-            </p>
-          </div>
-          <div>
-            <h3 class="font-serif text-2xl text-gold mb-4">Contact</h3>
-            <p class="font-sans text-sm md:text-base text-gray-300 mb-2">
-              1535 South Eighth St.
-            </p>
-            <p class="font-sans text-sm md:text-base text-gray-300">
-              St. Louis, MO 63104
-            </p>
-            <p class="font-sans text-sm md:text-base text-gray-300">
-              314.436.2500
-            </p>
-          </div>
-        </div>
-
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
           <a href="/contact-us" class="btn-primary">Make a Reservation</a>
-          <a href="/subscribe-now" class="btn-outline"
-            >Subscribe to Newsletter</a
-          >
+          <a href="tel:3144362500" class="btn-outline">
+            <i class="fa-solid fa-phone mr-2"></i>
+            314.436.2500
+          </a>
         </div>
+
+        <div class="border-t border-gold/20 pt-10">
+          <p
+            class="font-sans text-gray-400 text-sm uppercase tracking-wider mb-2"
+          >
+            Located in Soulard
+          </p>
+          <p class="font-serif text-gold text-xl">
+            1535 South Eighth St, St. Louis, MO 63104
+          </p>
+          <p class="font-sans text-gray-400 mt-2">
+            Monday – Saturday, 5PM – Close
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Preview -->
+    <section class="py-16 px-4 bg-dark">
+      <div class="max-w-4xl mx-auto text-center">
+        <h3 class="font-serif text-2xl text-white mb-4">Stay Updated</h3>
+        <p class="font-sans text-gray-400 mb-6">
+          Subscribe for updates on seasonal menus, special events, and exclusive
+          offers.
+        </p>
+        <a
+          href="/subscribe-now"
+          class="text-gold hover:text-white transition-colors uppercase text-sm tracking-wider"
+        >
+          Subscribe to Newsletter →
+        </a>
       </div>
     </section>
   </div>
